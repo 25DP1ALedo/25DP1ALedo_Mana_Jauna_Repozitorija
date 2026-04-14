@@ -1,37 +1,39 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background-color: #e6e8e6;
+    background-color: #e9ded3;
 }
 
 header {
     display: flex;
+    font-size: 35px;
+    font-weight: bold;
     justify-content: space-between;
     padding: 20px 40px;
-    background-color: #6f8088;
+    background-color: #34302a;
     color: white;
 }
 
 .logo {
-    font-size: 40px;
+    font-size: 35px;
     font-weight: bold;
 }
 
 nav a {
-    margin-left: 20px;
+    margin-left: 25px;
     text-decoration: none;
     color: white;
     font-size: 20px;
 }
 
 nav a:hover {
-    color: #bb7e8c;
+    color: #ff003c;
 }
 
 .hero {
-    height: 350px; /* уменьшили */
+    height: 350px; 
     background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
-                url("https://luteradraudze.lv/wp-content/uploads/2017/02/skapis.jpg");
+                url("https://lv2.pigugroup.eu/testimonials/3a57a33c19351ae0b5172a245fe013b9.jpg");
     background-size: cover;
     background-position: center;
     display: flex;
@@ -44,13 +46,13 @@ nav a:hover {
 .btn {
     margin-top: 20px;
     padding: 10px 20px;
-    background-color: #bb7e8c;
+    background-color: #ff003c;
     color: white;
     text-decoration: none;
 }
 
 .btn:hover {
-    background-color: #6f8088;
+    background-color: #4c5154;
 }
 
 .products {
@@ -64,7 +66,7 @@ nav a:hover {
 }
 
 .card {
-    background: white;
+    background: #fcf2e9;
     padding: 15px;
     text-align: center;
     transition: 0.3s;
@@ -76,7 +78,9 @@ nav a:hover {
 }
 
 .card img {
-    width: 100%;
+    width: 80%;
+    height: 250px;
+    object-fit: cover;
 }
 
 .old {
@@ -85,7 +89,7 @@ nav a:hover {
 }
 
 .new {
-    color: red;
+    color: #ff003c;
     font-weight: bold;
 }
 
@@ -100,10 +104,10 @@ nav a:hover {
 }
 
 .contact-block {
-    background-color: #bb7e8c;
+    background-color: #585147;
     color: white;
     padding: 30px;
-    text-align: center;
+    text-align: left;
 }
 
 .contact-block p {
@@ -111,7 +115,7 @@ nav a:hover {
 }
 
 footer {
-    background-color: #566369;
+    background-color: #34302a;
     color: white;
     padding: 20px 40px;
 }
