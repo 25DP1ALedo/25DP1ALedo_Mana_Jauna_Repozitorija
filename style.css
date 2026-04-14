@@ -1,0 +1,126 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #e6e8e6;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 40px;
+    background-color: #6f8088;
+    color: white;
+}
+
+.logo {
+    font-size: 40px;
+    font-weight: bold;
+}
+
+nav a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+}
+
+nav a:hover {
+    color: #bb7e8c;
+}
+
+.hero {
+    height: 350px; /* уменьшили */
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                url("https://luteradraudze.lv/wp-content/uploads/2017/02/skapis.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #bb7e8c;
+    color: white;
+    text-decoration: none;
+}
+
+.btn:hover {
+    background-color: #6f8088;
+}
+
+.products {
+    padding: 40px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.card {
+    background: white;
+    padding: 15px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.card img {
+    width: 100%;
+}
+
+.old {
+    text-decoration: line-through;
+    color: gray;
+}
+
+.new {
+    color: red;
+    font-weight: bold;
+}
+
+.search-bar {
+    padding: 30px;
+    text-align: center;
+}
+
+.search-bar input {
+    padding: 10px;
+    width: 300px;
+}
+
+.contact-block {
+    background-color: #bb7e8c;
+    color: white;
+    padding: 30px;
+    text-align: center;
+}
+
+.contact-block p {
+    margin: 10px 0;
+}
+
+footer {
+    background-color: #566369;
+    color: white;
+    padding: 20px 40px;
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-bottom {
+    margin-top: 10px;
+}
