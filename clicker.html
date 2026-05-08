@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Doge Clicker</title>
+
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    transition: 0.5s;
+    background-size: cover;
+    background-position: center;
+}
+
+/* Backgrounds */
+.bg1 {
+    background: linear-gradient(135deg, #ffecd2, #fcb69f);
+}
+
+.bg2 {
+    background-image: url("https://wallpapercave.com/wp/wp6975998.jpg");
+}
+
+.bg3 {
+    background-image: url("https://wallpapercave.com/wp/wp11369181.jpg");
+}
+
+.game {
+    background: rgba(255,255,255,0.9);
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    width: 420px;
+}
+
+h1 {
+    color: #ff6600;
+}
+
+#score {
+    font-size: 40px;
+    font-weight: bold;
+    color: orange;
+    margin: 20px 0;
+}
+
+#doge {
+    width: 250px;
+    cursor: pointer;
+    transition: 0.1s;
+    border-radius: 20px;
+}
+
+#doge:hover {
+    transform: scale(1.05);
+}
+
+#doge:active {
+    transform: scale(0.95);
+}
+
+button {
+    margin-top: 15px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 10px;
+    background: #ff6600;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover {
+    background: #e65c00;
+}
+
+#infoBox {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 10px;
+    background: #ffe0cc;
+    display: none;
+}
+</style>
+</head>
+
+<body class="bg1">
+
+<div class="game">
+
+    <h1>🐶 Doge Clicker</h1>
+
+    <div id="score">0</div>
+
+    <img 
+        id="doge"
+        src="https://pngimg.com/uploads/doge_meme/doge_meme_PNG8.png"
+    >
+
+    <br>
+
+    <button onclick="changeBackground()">
+        Mainīt fonu
+    </button>
+
+    <button onclick="showInfo()">
+        Informācija
+    </button>
+
+    <div id="infoBox"></div>
+
+</div>
+
+<script>
+
+let score = 0;
+
+const scoreText = document.getElementById("score");
+const doge = document.getElementById("doge");
+const infoBox = document.getElementById("infoBox");
+
+let skinLevel = 0;
+let bgLevel = 0;
+
+/* Doge skins */
+const skins = [
+    "https://pngimg.com/uploads/doge_meme/doge_meme_PNG8.png",
+
+    "https://i.pinimg.com/564x/91/9f/5f/919f5fda380957589650eb9285dcdf92.jpg",
+
+    "https://i.imgur.com/5cX1K7F.png"
+];
+
+/* Background classes */
+const backgrounds = [
+    "bg1",
+    "bg2",
+    "bg3"
+];
+
+/* Click on doge */
+doge.addEventListener("click", function() {
+
+    score++;
+    scoreText.textContent = score;
+
+    /* unlock skin */
+    if (score >= 10 && skinLevel === 0) {
+        doge.src = skins[1];
+        skinLevel = 1;
+        alert("🎉 Jauns Doge apģērbs!");
+    }
+
+    if (score >= 25 && skinLevel === 1) {
+        doge.src = skins[2];
+        skinLevel = 2;
+        alert("🔥 Jauna Doge poza!");
+    }
+
+});
+
+/* Change background */
+function changeBackground() {
+
+    if (score < 5) {
+        alert("Vajag vismaz 5 klikšķus!");
+        return;
+    }
+
+    bgLevel++;
+
+    if (bgLevel >= backgrounds.length) {
+        bgLevel = 0;
+    }
+
+    document.body.className = backgrounds[bgLevel];
+}
+
+/* Show info */
+function showInfo() {
+
+    infoBox.style.display = "block";
+
+    let nextSkin = "";
+
+    if (score < 10) {
+        nextSkin = 10 - score;
+    }
+    else if (score < 25) {
+        nextSkin = 25 - score;
+    }
+    else {
+        nextSkin = "Visi skin atbloķēti!";
+    }
+
+    infoBox.innerHTML = `
+        <b>Klikšķi:</b> ${score} <br><br>
+
+        <b>Līdz nākamajam skin:</b> ${nextSkin}
+    `;
+}
+
+</script>
+
+</body>
+</html>
