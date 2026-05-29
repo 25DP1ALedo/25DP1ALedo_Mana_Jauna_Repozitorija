@@ -42,7 +42,7 @@ doge.onclick = function () {
 
     if (skinLevel + 1 < skinPrices.length &&
         score >= skinPrices[skinLevel + 1]) {
-        alert("🎉 Tu vari nopirkt jaunu skinu!");
+        alert("Tu vari nopirkt jaunu skinu!");
     }
 };
 
@@ -56,7 +56,7 @@ function buySkin() {
         skinLevel++;
         doge.src = skins[skinLevel];
         scoreText.textContent = score;
-        alert("🐶 Jauns skins nopirkts!");
+        alert("Jauns skins nopirkts!");
     } else {
         alert("Vēl vajag " + (price - score) + " klikšķus");
     }
@@ -68,7 +68,7 @@ function upgradeClicks() {
         clickPower++;
         upgradePrice += 30;
         scoreText.textContent = score;
-        alert("⚡ Klikšķa spēks: " + clickPower);
+        alert("Klikšķa spēks: " + clickPower);
     } else {
         alert("Vajag vēl " + (upgradePrice - score));
     }
