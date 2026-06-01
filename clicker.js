@@ -58,14 +58,20 @@ function buySkin() {
     let price = skinPrices[skinLevel + 1];
 
     if (price == undefined) {
-        alert("Visi skini nopirkti! :)) ");
+        alert("Spēle beigusies!");
+        endGame();
     }
     else if (score >= price) {
         score -= price;
         skinLevel++;
-        doge.src = skins[skinLevel];
         scoreText.innerHTML = score;
-        alert("Jauns skins nopirkts! =^-^= ");
+
+        if (skinLevel >= skins.length - 1) {
+            endGame();
+        } else {
+            doge.src = skins[skinLevel];
+            alert(" Jauns skins nopirkts! =^-^= ");
+        }
     }
     else {
         alert("Vajag vēl " + (price - score));
@@ -111,8 +117,14 @@ function showInfo() {
 }
 
 function endGame() {
-    endBox.style.display = "block";
     doge.style.display = "none";
+
+    endBox.style.display = "block";
+    endBox.innerHTML = `
+        <h1>Game Over</h1>
+        <p>Tu nopirki pēdējo skinu! =^-^= </p>
+        <button onclick="restartGame()">Restart</button>
+    `;
 }
 
 function restartGame() {
@@ -123,7 +135,18 @@ function restartGame() {
     upgradePrice = 30;
 
     scoreText.innerHTML = score;
+
     doge.src = skins[0];
     doge.style.display = "block";
+
     endBox.style.display = "none";
+
+
+    endBox.innerHTML = "";
+
+    document.body.style.display = "flex";
+    document.body.style.justifyContent = "center";
+    document.body.style.alignItems = "center";
+
+    document.querySelector(".game").style.margin = "50px auto";
 }
