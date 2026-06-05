@@ -103,17 +103,19 @@ function changeBackground() {
 }
 
 function showInfo() {
-    let next = skinPrices[skinLevel + 1]
-        ? skinPrices[skinLevel + 1] - score
-        : "Visi atbloķēti";
+   let next;
 
-    infoBox.style.display = "block";
+    if (skinPrices[skinLevel + 1]) {
+        next = skinPrices[skinLevel + 1] - score;
+    } else {
+        next = "Visi atblokēti";
+    }
 
-    infoBox.innerHTML =
-        "Klikšķi: " + score + "<br>" +
-        "Klikšķa spēks: " + clickPower + "<br>" +
-        "Līdz skinam: " + next + "<br>" +
-        "Upgrade cena: " + upgradePrice;
+infoBox.style.display = "block";
+infoBox.innerHTML = "Klikšķi: " + score + "<br>" +
+                    "Klikšķa spēks: " + clickPower + "<br>" +
+                    "Līdz skinam: " + next + "<br>" +
+                    "Upgrade cena: " + upgradePrice;
 }
 
 function endGame() {
