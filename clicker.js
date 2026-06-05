@@ -143,12 +143,6 @@ function restartGame() {
 
     endBox.style.display = "none";
 
-
-    endBox.innerHTML = "";
-
-    document.body.style.display = "flex";
-    document.body.style.justifyContent = "center";
-    document.body.style.alignItems = "center";
-
-    document.querySelector(".game").style.margin = "50px auto";
+    infoBox.style.display = "none";
+    document.body.style.backgroundImage = "";
 }
